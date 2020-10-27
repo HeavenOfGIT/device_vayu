@@ -27,4 +27,6 @@
     <!-- 30 seconds for default screen timeout -->
     <integer name="def_screen_off_timeout">30000</integer>
 
+    <!-- Comma-separated list of bluetooth, wifi, and cell. -->
+    <string name="def_airplane_mode_radios" translatable="false">cell</string>
 </resources>
