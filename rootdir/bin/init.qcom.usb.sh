@@ -97,7 +97,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a "$(getprop ro.build.type)" 
 			"Dragon" | "SBC")
 				setprop persist.vendor.usb.config diag,adb
 			;;
-			"CMI" | "UMI" | "PICASSO" | "MONET" | "VANGOGH" | "LMI" | "COURBET" | "SWEET" | "ALIOTH" | "THYME" | "VAYU" | "ENUMA")
+			"CMI" | "UMI" | "PICASSO" | "MONET" | "VANGOGH" | "LMI" | "COURBET" | "SWEET" | "ALIOTH" | "THYME" | "VAYU")
 				if [ "$(getprop ro.boot.factorybuild)" == "1" ]; then
 					setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
 				elif [ "$buildvariant" = "eng" ]; then
@@ -207,6 +207,14 @@ if [ -d /config/usb_gadget ]; then
 
 	setprop vendor.usb.configfs 1
 	setprop sys.usb.configfs 1
+fi
+
+# update product
+marketname=`getprop ro.product.marketname`
+if [ "$marketname" != "" ]; then
+    setprop vendor.usb.product_string "$marketname"
+else
+    setprop vendor.usb.product_string "$(getprop ro.product.model)"
 fi
 
 # update product
