@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
 # Inherit common BlissROM configurations
-$(call inherit-product, vendor/stag//main.mk)
+$(call inherit-product, vendor/stag/main.mk)
 
 WITHOUT_GAPPS = true
 
