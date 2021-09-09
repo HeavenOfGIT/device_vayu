@@ -12,14 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
 # Inherit common BlissROM configurations
-$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+$(call inherit-product, vendor/stag//main.mk)
 
-# Inherit GApps
-BLISS_BUILD_VARIANT := gapps
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
+WITHOUT_GAPPS = true
 
-PRODUCT_NAME := bliss_vayu
+PRODUCT_NAME := stag_vayu
 PRODUCT_DEVICE := vayu
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := Poco X3 Pro
